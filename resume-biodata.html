@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preethi Chekki | Personal Website</title>
+  <style>
+    /* ==== GLOBAL ==== */
+    :root {
+      --primary: #0056b3;
+      --secondary: #0078d7;
+      --accent: #f5f5f5;
+      --text-light: #f9f9f9;
+      --text-dark: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ==== HEADER ==== */
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* ==== NAVIGATION ==== */
+    nav {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background: var(--text-light);
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    nav button:hover, nav button.active {
+      background: var(--accent);
+      color: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* ==== MAIN SECTIONS ==== */
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    section {
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    p, li, td {
+      line-height: 1.7;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff9800;
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 0.95rem;
+      color: #ddd;
+      margin-top: auto;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #ffcc00;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Preethi Chekki</h1>
+    <p>✨ Welcome to My Personal Space on the Web</p>
+    <nav>
+      <button class="active" onclick="showSection('home', this)">Home</button>
+      <button onclick="showSection('resume', this)">Resume</button>
+      <button onclick="showSection('biodata', this)">Biodata</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="active">
+      <h2>Home</h2>
+      <p>Welcome to my personal website!  
+      Here you’ll find my background, education, and achievements — all in one place.  
+      Use the navigation buttons above to explore my Resume and Biodata.</p>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume">
+      <h2>Resume</h2>
+
+      <div class="card">
+        <p><strong>Career Objective:</strong></p>
+        <p>To leverage my knowledge of computer science and programming to contribute to impactful projects while growing in software development and technology innovation.</p>
+      </div>
+
+      <div class="card">
+        <p><strong>Education:</strong></p>
+        <ul>
+          <li><b>B.E</b> – Computer Science and Engineering, SKSVMACET, Lakshmeshwar (2022–2026)</li>
+          <li>Class XII – Govt. PU College, Sagar (2022)</li>
+          <li>Class X – Oxford School, Lakshmeshwar (2020)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <p><strong>Skills:</strong></p>
+        <ul>
+          <li>HTML, CSS (Basics)</li>
+          <li>C Programming</li>
+          <li>Python (Basics)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <p><strong>Hobbies:</strong></p>
+        <ul>
+          <li>Reading</li>
+          <li>Traveling</li>
+          <li>Painting</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <p><strong>Links:</strong></p>
+        <ul>
+          <li><a href="https://github.com/Preethi-u-c" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/preethi-u-chekki-8a97892a2" target="_blank">LinkedIn</a></li>
+          <li><a href="https://preethi-u-c.github.io/portfolio-website/" target="_blank">Portfolio Website</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BIODATA -->
+    <section id="biodata">
+      <h2>Biodata</h2>
+      <table>
+        <tr><td><strong>Full Name:</strong></td><td>Preethi Chekki</td></tr>
+        <tr><td><strong>Father’s Name:</strong></td><td>Uliveppa Chekki</td></tr>
+        <tr><td><strong>Mother’s Name:</strong></td><td>Shivaleela Chekki</td></tr>
+        <tr><td><strong>Date of Birth:</strong></td><td>29 April 2005</td></tr>
+        <tr><td><strong>Age:</strong></td><td>20</td></tr>
+        <tr><td><strong>Gender:</strong></td><td>Female</td></tr>
+        <tr><td><strong>Nationality:</strong></td><td>Indian</td></tr>
+        <tr><td><strong>Address:</strong></td><td>Muktimandir Road, Ishwar Nagar,<br> Lakshmeshwar – 582116,<br> Karnataka, India</td></tr>
+        <tr><td><strong>Phone:</strong></td><td>7975832431</td></tr>
+        <tr><td><strong>Email:</strong></td><td>preethichekki@gmail.com</td></tr>
+        <tr><td><strong>Hobbies:</strong></td><td>Drawing, Traveling</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Designed & Developed by <a href="#">Preethi Chekki</a></p>
+    <p>© 2025 All Rights Reserved | Made with 💙 Passion & Creativity</p>
+  </footer>
+
+  <script>
+    function showSection(id, btn) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
